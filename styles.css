@@ -1,0 +1,144 @@
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cell:hover {
+  background: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.cell.placed {
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.2); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.cell.win {
+  background: #ffeb3b;
+  box-shadow: 0 0 20px #ffeb3b;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px #ffeb3b; }
+  to { box-shadow: 0 0 25px #ffc107; }
+}
+
+.winner {
+  color: #ff4081;
+  font-size: 1.3rem;
+  margin-top: 15px;
+  min-height: 30px;
+  transition: 0.3s;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4081;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background: #e73370;
+  transform: scale(1.1);
+}
+
+/* Popup styling */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  color: #ff4081;
+}
+
+.popup-content button {
+  background: #4facfe;
+}
+
+#confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* stay behind popup content */
+}

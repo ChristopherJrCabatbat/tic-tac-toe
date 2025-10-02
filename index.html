@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Tic Tac Toe</h1>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div id="scoreX">Player X: 0</div>
+      <div id="scoreO">Player O: 0</div>
+    </div>
+
+    <!-- Board -->
+    <div class="board" id="board"></div>
+
+    <!-- Status -->
+    <div class="winner" id="winner"></div>
+    <button onclick="resetGame()">Restart</button>
+
+    <!-- Win Popup -->
+    <div id="popup" class="popup">
+      <canvas id="confetti"></canvas>
+      <!-- put here, fullscreen -->
+      <div class="popup-content">
+        <h2 id="popup-message"></h2>
+        <button onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
