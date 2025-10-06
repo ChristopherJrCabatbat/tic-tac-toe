@@ -21,6 +21,7 @@
     <!-- Status -->
     <div class="winner" id="winner"></div>
     <button onclick="resetGame()">Restart</button>
+    <button onclick="enableOnlinePlay()">Play Online</button>
 
     <!-- Win Popup -->
     <div id="popup" class="popup">
@@ -32,6 +33,8 @@
       </div>
     </div>
 
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="scripts.js"></script>
     <script src="scripts.js"></script>
   </body>
 </html>
